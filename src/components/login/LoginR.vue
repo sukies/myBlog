@@ -17,19 +17,17 @@
 </template>
 
 <script>
-    import axios from 'axios'
     export default {
         name: 'LoginR',
         data () {
             return {
-                msg: 'Welcome to Your Vue.js App',
                 username: null,
                 password: null
             }
         },
         methods: {
             register: function () {
-                console.log(1);
+                var that = this;
                 if (!this.username) {
                     alert('请输入用户名');
                     return false;
@@ -41,8 +39,8 @@
                 this.$http.get(this.ajaxUrl() + `/Admin/Register?username=${this.username}&password=${this.password}`, {}).then(function (res) {
                     if (res.data.code == 200) {
                         alert('注册成功');
-                        this.setCookie('user', res.data.data);
-
+                        this.setCookie('user', JSON.stringify(res.data.data));
+                        that.$router.push({name: 'Index'});
                     } else {
                         alert(res.data.msg);
                     }

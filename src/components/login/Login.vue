@@ -14,13 +14,12 @@
         name: 'Login',
         data () {
             return {
-                isLogin:this.getcookie().username
+//                isLogin:this.getcookie().username
             }
         }
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped rel="stylesheet/less" lang="less">
     .m-login {
         position: fixed;

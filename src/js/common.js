@@ -18,7 +18,7 @@ export default {
             active: 0,
         };
 
-        Vue.prototype.getcookie = function () {
+        Vue.prototype.getCookie = function () {
             var cookie = {};
             var all = document.cookie;
             if (all === '')

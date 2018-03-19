@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+import Header from '@/components/Header.vue'
+
+
 import Index from '@/components/Index.vue'
 import ArticleList from '@/components/ArticleList.vue'
 import Article from '@/components/Article.vue'
 import LiveList from '@/components/LiveList.vue'
+// 登录
 import Login from '@/components/Login/Login.vue'
 import LoginL from '@/components/Login/LoginL.vue'
 import LoginR from '@/components/Login/LoginR.vue'
@@ -16,12 +19,11 @@ export default new Router({
         {
             path: '/',
             name: 'Index',
-            component: Index
-        },
-        {
-            path: '/HelloWorld',
-            name: 'HelloWorld',
-            component: HelloWorld
+            component: Index,
+            children: [{
+                    path: '',
+                    component: Header
+                }]
         },
         {
             path: '/ArticleList',
@@ -39,7 +41,7 @@ export default new Router({
             component: Article
         },
         {
-            path: '/Login/:statue' ,
+            path: '/Login/:statue',
             name: 'Login',
             component: Login,
             children: [

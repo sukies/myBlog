@@ -1,28 +1,22 @@
 <template>
     <div class="g-wrapper">
         <div class="m-bg"></div>
-        <div class="g-main-wrapper">
-            <nav class="m-nav">
-                <router-link :to="{ name: 'LiveList'}" class="u-btn">生活</router-link>
-                <router-link :to="{ name: 'DemoList'}" class="u-btn">DEMO</router-link>
-                <router-link :to="{ name: 'ArticleList'}" class="u-btn">文章</router-link>
-                <router-link :to="{ name: 'Article'}" class="u-btn">文章编辑</router-link>
-                <router-link :to="'/Login/statue/Login'" class="u-btn">登录</router-link>
-            </nav>
-        </div>
+        <Header></Header>
         <router-link :to="{ name: 'ArticleList'}" class="u-btn-big">ARTICLE GO</router-link>
         <div class="lantern-1"></div>
     </div>
 </template>
 
 <script>
+    import Header  from "./Header.vue";
     export default {
         name: 'Index',
         data () {
             return {
                 msg: 'Welcome to Your Vue.js App',
             }
-        }
+        },
+        components: {"Header": Header}
     }
 </script>
 
