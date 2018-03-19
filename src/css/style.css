@@ -1,0 +1,45 @@
+div {
+  color: #42b983;
+}
+.div-1 {
+  animation: an-div-move--611 linear 8s infinite 4.82357906s;
+}
+@keyframes an-div-move--611 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -0.311rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.div-2 {
+  animation: an-div-move-493 linear 8s infinite 1.7538035s;
+}
+@keyframes an-div-move-493 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 0.793rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.div-3 {
+  animation: an-div-move-557 linear 8s infinite 4.65403445s;
+}
+@keyframes an-div-move-557 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 0.857rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

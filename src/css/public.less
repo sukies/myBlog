@@ -1,0 +1,154 @@
+@blue: #0299d9;
+@green: #09e6b0;
+@white: #edeff3;
+@gray: #d5d7db;
+@black: #271f1e;
+.g-bg {
+    display: block;
+    height: 100%;
+    height: 100vh;
+    background: url("../assets/bg_edit.png") no-repeat center fixed;
+    background-size: cover;
+}
+
+.u-btn {
+    color: white;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
+    //border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all .2s;
+    &:hover {
+        border-bottom: 1px solid rgba(255, 255, 255, .6);
+    }
+}
+
+.u-btn-big {
+    line-height: 50px;
+    border: 1px solid #666;
+    color: #333;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 4px;
+    transition: all .2s;
+    &:after {
+        content: '>';
+        position: relative;
+        opacity: 1;
+    }
+    &:hover {
+        background: #333;
+        color: white;
+    }
+}
+
+.g-main-wrapper {
+    position: relative;
+    margin: 0 auto;
+}
+
+.g-flex {
+    position: fixed;
+}
+
+.g-flex-auto {
+    flex: auto;
+}
+
+@media screen and(max-width: 1199px) {
+    .g-main-wrapper {
+        width: 960px;
+    }
+}
+
+@media screen and(min-width: 1200px) {
+    .g-main-wrapper {
+        width: 1200px;
+    }
+}
+
+.m-header {
+    height: 50px;
+    background: linear-gradient(to right, rgba(9, 270, 136, .5), rgba(2, 153, 217, .5));
+    margin-bottom: 20px;
+    text-align: right;
+    nav{
+        padding-top: 5px;
+    }
+}
+
+.m-footer {
+
+}
+
+.m-edit {
+    color: #333;
+    h1 {
+        line-height: 80px;
+        border-bottom: 1px solid #999;
+    }
+    pre {
+        background: #f0f0f0;
+        padding: 10px;
+        max-height: 400px;
+    }
+    blockquote{
+        background: #f0f0f0;
+        margin: 16px 0px;
+        padding: 1px 0 1px 30px;
+        border-left: 4px solid @blue;
+    }
+}
+
+.m-edit-wrapper {
+    resize: both;
+    .edit-top {
+        line-height: 36px;
+        height: 36px;
+        background: #f0f0f0;
+    }
+    .m-edit {
+        position: relative;
+        border: 1px solid #d9d9d9;
+        .g-flex {
+            position: fixed;
+        }
+        .g-flex-auto {
+            //flex: 0 0 50%;
+            //position: ;
+        }
+        textarea {
+            resize: vertical;
+            outline: none;
+        }
+        .left, .right {
+            overflow: hidden;
+            border: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .left {
+            width: 50%;
+            display: block;
+            box-sizing: border-box;
+            height: 500px;
+        }
+        .right {
+            width: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            background: #f9f9f9;
+            overflow-x: auto;
+        }
+        //编辑器
+        pre {
+            min-width: 960px;
+        }
+    }
+}

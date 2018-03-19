@@ -1,0 +1,45 @@
+@import "normalize.css";
+@import "public.less";
+
+div {
+    //color: #42b983;
+}
+
+.m-login {
+    label {
+        display: block;
+        margin: 15px 0;
+    }
+    .name {
+        display: inline-block;
+        width: 5em;
+        text-align: right;
+    }
+    input {
+        border: 0;
+        outline: 0;
+        line-height: 36px;
+        width: 180px;
+        padding: 0 10px;
+    }
+    button {
+        border: 0;
+        background: @blue;
+        color: white;
+    }
+    .u-btn-big {
+        font-size: 16px;
+        line-height: 30px;
+        width: 180px;
+        margin-bottom:  15px ;
+        &:hover{
+            color: white;
+            text-decoration: underline;
+            background: @blue;
+        }
+    }
+    .z-hint {
+       position: relative;
+        left: 5em;
+    }
+}
