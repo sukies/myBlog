@@ -5,30 +5,12 @@
         </header>
 
         <div class="g-main-wrapper m-edit-wrapper">
-            <div class="wrapper">
-                <div class="g-flex article-list">
-                    <span class="title">标题</span>
-                    <input type="text" class="g-flex-auto">
-                </div>
+            <h1 class="title">{{obj?obj.title:''}}</h1>
+            <p class="hint"><span class="">作者：{{obj?obj.author:''}}</span><span class="">发布时间：{{obj?obj.time:''}}</span></p>
+            <div class="m-edit">
 
-                <div class="edit-top">
-                    <i class="i-icon-code"></i>
-                    Markdown编辑器
-                </div>
-                <div class="m-edit ">
-                <textarea class="left g-flex-auto" v-bind:value="article"
-                          v-on:input="articles($event.target.value)" placeholder="add multiple lines"></textarea>
-                    <div class="right g-flex-auto">
-                        <Show :article="article"></Show>
-                    </div>
-                </div>
-
-                <div class="g-flex article-list">
-                    <span class="g-flex-auto"></span>
-                    <div class="submit">发布文章</div>
-                </div>
-            </div>
-
+                <Show :article="article"></Show>
+        </div>
         </div>
         <!--<fotter>-->
         <!--备案号：浙ICP备17008567-->
@@ -44,20 +26,62 @@
         data () {
             return {
                 article: '',
+                articleTitle: '',
+                obj: null
             }
         },
+        created: function () {
+            this.getArticle(this.$route.params.articleid);
+        },
         methods: {
-            articles(e){
-                this.$data.article = e;
-
+            getArticle(id) {
+                let that = this;
+                this.$http.get(this.ajaxUrl() + `/Admin/GetArticle.php`, {
+                    params: {
+                        articleid: id
+                    },
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                }).then(function (res) {
+                    if (res.data.code == 200) {
+                        that.$data.article = res.data.data.detail;
+                        let obj = res.data.data;
+                        obj.time = that.timestampToTime(obj.time);
+                        that.$data.obj = obj;
+                    } else {
+                        alert(res.data.msg);
+                    }
+                }).catch(function (error) {
+                    console.log(error);
+                });
             }
         },
         components: {"Show": Show, "Header": Header}
     }
+
+
 </script>
 
 <style scoped rel="stylesheet/less" lang="less">
     .edit-top {
         text-align: center;
+    }
+
+    .m-edit-wrapper {
+        padding: 15px 20px;
+        box-sizing: border-box;
+    }
+
+    .hint span {
+        color: #999;
+        padding-right: 20px;
+    }
+    .m-edit-wrapper .m-edit{
+        border: 0;
+        pre{
+            width: auto;
+        }
     }
 </style>

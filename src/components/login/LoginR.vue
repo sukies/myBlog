@@ -6,7 +6,7 @@
         </label>
         <label>
             <span class="name">设置密码：</span>
-            <input type="text" v-model="password" name="password">
+            <input type="password" v-model="password" name="password">
         </label>
         <div>
             <span class="name"></span>
@@ -28,6 +28,7 @@
         methods: {
             register: function () {
                 var that = this;
+
                 if (!this.username) {
                     alert('请输入用户名');
                     return false;
@@ -36,7 +37,7 @@
                     alert('请输入密码');
                     return false;
                 }
-                this.$http.get(this.ajaxUrl() + `/Admin/Register?username=${this.username}&password=${this.password}`, {}).then(function (res) {
+                this.$http.get(this.ajaxUrl() + `/Admin/Register.php?username=${this.username}&password=${this.password}`, {}).then(function (res) {
                     if (res.data.code == 200) {
                         alert('注册成功');
                         this.setCookie('user', JSON.stringify(res.data.data));

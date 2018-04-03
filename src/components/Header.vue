@@ -1,11 +1,11 @@
 <template>
     <div class="g-main-wrapper">
         <nav class="m-nav">
-            <router-link :to="{ name: 'LiveList'}" class="u-btn">生活</router-link>
+            <router-link :to="{ name: 'Index'}" class="u-btn">首页</router-link>
+            <!--<router-link :to="{ name: 'LiveList'}" class="u-btn">生活</router-link>-->
             <!--<router-link :to="{ name: 'DemoList'}" class="u-btn">DEMO</router-link>-->
             <router-link :to="{ name: 'ArticleList'}" class="u-btn">文章</router-link>
-
-            <router-link v-if="user" :to="{ name: 'Article'}" class="u-btn">文章编辑</router-link>
+            <router-link v-if="user" :to="{ name: 'ArticleEdit'}" class="u-btn">发布文章</router-link>
             <router-link v-if="!user" :to="'/Login/statue/Login'" class="u-btn">登录</router-link>
             <span v-else class="u-btn">{{user.username}}</span>
         </nav>

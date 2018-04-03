@@ -6,7 +6,7 @@
         </label>
         <label>
             <span class="name">密码：</span>
-            <input type="text" v-model="password" name="password">
+            <input type="password" v-model="password" name="password">
         </label>
         <div>
             <span class="name"></span>
@@ -35,13 +35,14 @@
                     alert('请输入密码');
                     return false;
                 }
-                this.$http.get(this.ajaxUrl() + `/Admin/Login?username=${this.username}&password=${this.password}`, {}).then(function (res) {
+                this.$http.get(this.ajaxUrl() + `/Admin/Login.php?username=${this.username}&password=${this.password}`, {}).then(function (res) {
                     if (res.data.code == 200) {
                         alert('登录成功');
                         that.setCookie('user', JSON.stringify(res.data.data));
                         that.$router.push({ name: 'Index'});
                     } else {
                         alert(res.data.msg);
+
                     }
                 })
                     .catch(function (error) {

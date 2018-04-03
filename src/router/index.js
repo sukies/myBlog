@@ -6,6 +6,7 @@ import Header from '@/components/Header.vue'
 import Index from '@/components/Index.vue'
 import ArticleList from '@/components/ArticleList.vue'
 import Article from '@/components/Article.vue'
+import ArticleEdit from '@/components/ArticleEdit.vue'
 import LiveList from '@/components/LiveList.vue'
 // 登录
 import Login from '@/components/Login/Login.vue'
@@ -21,9 +22,9 @@ export default new Router({
             name: 'Index',
             component: Index,
             children: [{
-                    path: '',
-                    component: Header
-                }]
+                path: '',
+                component: Header
+            }]
         },
         {
             path: '/ArticleList',
@@ -36,9 +37,14 @@ export default new Router({
             component: LiveList
         },
         {
-            path: '/Article',
+            path: '/Article/:articleid',
             name: 'Article',
-            component: Article
+            component: Article,
+        },
+        {
+            path: '/ArticleEdit',
+            name: 'ArticleEdit',
+            component: ArticleEdit
         },
         {
             path: '/Login/:statue',

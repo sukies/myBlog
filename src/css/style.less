@@ -31,15 +31,41 @@ div {
         font-size: 16px;
         line-height: 30px;
         width: 180px;
-        margin-bottom:  15px ;
-        &:hover{
+        margin-bottom: 15px;
+        &:hover {
             color: white;
             text-decoration: underline;
             background: @blue;
         }
     }
     .z-hint {
-       position: relative;
+        position: relative;
         left: 5em;
+    }
+}
+
+.b-article-list {
+    .m-article-w {
+        background: white;
+        //padding: 0 15px;
+        .list {
+            border-bottom: 1px dotted @border;
+            padding: 20px 10px;
+            &:last-child {
+                border: 0;
+            }
+            &:hover {
+                background: #f0f0f0;
+            }
+        }
+        .title {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .other {
+            color: #999;
+            font-size: 14px;
+        }
     }
 }
