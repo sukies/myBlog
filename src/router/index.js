@@ -5,6 +5,7 @@ import Header from '@/components/Header.vue'
 
 import Index from '@/components/Index.vue'
 import ArticleList from '@/components/ArticleList.vue'
+import EnglishList from '@/components/EnglishList.vue'
 import Article from '@/components/Article.vue'
 import ArticleEdit from '@/components/ArticleEdit.vue'
 import LiveList from '@/components/LiveList.vue'
@@ -30,6 +31,11 @@ export default new Router({
             path: '/ArticleList',
             name: 'ArticleList',
             component: ArticleList
+        },
+        {
+            path: '/EnglishList',
+            name: 'EnglishList',
+            component: EnglishList
         },
         {
             path: '/LiveList',

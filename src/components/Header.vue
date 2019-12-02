@@ -5,6 +5,7 @@
             <!--<router-link :to="{ name: 'LiveList'}" class="u-btn">生活</router-link>-->
             <!--<router-link :to="{ name: 'DemoList'}" class="u-btn">DEMO</router-link>-->
             <router-link :to="{ name: 'ArticleList'}" class="u-btn">文章</router-link>
+            <router-link :to="{ name: 'EnglishList'}" class="u-btn">英语学习</router-link>
             <router-link v-if="user" :to="{ name: 'ArticleEdit'}" class="u-btn">发布文章</router-link>
             <router-link v-if="!user" :to="'/Login/statue/Login'" class="u-btn">登录</router-link>
             <span v-else class="u-btn">{{user.username}}</span>
